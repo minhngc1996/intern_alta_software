@@ -10,6 +10,7 @@ const firebaseConfig = {
   messagingSenderId: "165735529832",
   appId: "1:165735529832:web:7f1fdd7573593137b86add",
   measurementId: "G-PEB4GR41KC",
+  //Thực hiện config Firebase từ CSDL firebase
 };
 
 const app = initializeApp(firebaseConfig);

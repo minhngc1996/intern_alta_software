@@ -1,0 +1,100 @@
+.footer {
+  background-color: rgba(0, 37, 73, 0.8);
+  color: white;
+  padding: 28px 10%;
+  font-size: smaller;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 138px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 280px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo {
+  max-width: 100px;
+  height: auto;
+  margin-right: 15px;
+}
+
+.footer-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-company-name {
+  color: var(--White, #fff);
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.footer-brand-name {
+  margin: 0;
+  color: #9ff;
+  font-family: "Helvetica Neue";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+
+.footer-title {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+}
+
+.footer-text {
+  margin: 8px 0;
+}
+
+.footer-link {
+  color: #e0e0e0;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.footer-link:hover {
+  color: #d0d0d0;
+  text-decoration: underline;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-list-item {
+  margin-bottom: 8px;
+}
+
+.footer-bottom {
+  margin-top: 28px;
+  text-align: center;
+}
+
+.footer-copyright {
+  font-size: 9px;
+  color: darkgray;
+  text-align: start;
+}
