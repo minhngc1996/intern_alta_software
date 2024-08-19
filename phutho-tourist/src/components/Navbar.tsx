@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css'; 
 import logo from '../assets/logo.svg'; 
+import Banner from './Banner';
 const Navbar: React.FC = () => {
   return (
-    <nav className={styles.navbar}>
+    <>
+      <nav className={styles.navbar}>
       <ul>
         <li><Link to="/">Trang Chủ</Link></li>
         <li><Link to="/posts">Bài Viết</Link></li>
@@ -13,6 +15,8 @@ const Navbar: React.FC = () => {
         <li><Link to="/recruitment">Tuyển Dụng</Link></li>
       </ul>
     </nav>
+    <Banner />
+    </>
   );
 };
 

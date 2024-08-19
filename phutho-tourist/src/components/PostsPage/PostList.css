@@ -1,0 +1,14 @@
+.post-list {
+  flex: 1;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.pagination {
+  margin-top: 20px;
+  text-align: center;
+}

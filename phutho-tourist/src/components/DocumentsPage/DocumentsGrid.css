@@ -1,0 +1,50 @@
+.documents-container {
+  max-width: calc(100% - 800px); /* Lề 500px mỗi bên */
+  margin: 0 auto; /* Căn giữa container */
+  padding: 16px 0; /* Khoảng cách trên và dưới của container */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 22.111px; /* Khoảng cách giữa các card */
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  color: #1d3f99;
+  width: 100%;
+}
+
+.document-card {
+  width: 180px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.document-card .ant-card-cover img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.document-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  white-space: normal; /* Allow text to wrap to the next line */
+  word-wrap: break-word; /* Break long words to prevent overflow */
+  line-height: 1.2; /* Adjust line height for better readability */
+}
+
+.card-meta {
+  text-align: center;
+  font-size: 14px;
+}

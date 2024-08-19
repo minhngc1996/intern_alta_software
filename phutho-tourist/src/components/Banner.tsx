@@ -46,36 +46,7 @@ const Banner: React.FC = () => {
         <p>Loading video...</p>
       )}
 
-      {imageUrls.length > 0 ? (
-        <div className="carousel-container">
-          {imageUrls.map((url, index) => {
-            const isSelected = index === selectedImageIndex;
-            const isPrev = index === (selectedImageIndex - 1 + imageUrls.length) % imageUrls.length;
-            const isNext = index === (selectedImageIndex + 1) % imageUrls.length;
-
-            return (
-              <div
-                key={index}
-                className={`carousel-image ${
-                  isSelected ? 'selected' : isPrev || isNext ? 'nearby' : 'dimmed'
-                }`}
-                onClick={() => handleClick(index)}
-              >
-                <img
-                  src={url}
-                  alt={`Banner ${index}`}
-                  className="carousel-image-content"
-                />
-                <div className="image-overlay">
-                  {imageTitles[index]}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      ) : (
-        <p>Loading images...</p>
-      )}
+      
     </div>
   );
 };
