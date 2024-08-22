@@ -18,26 +18,26 @@ const Posts = () => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <section className="posts-section">
-      <div className="header">
+    <section className="postHomePage-section">
+      <div className="postHomePage-header">
         <h3>CHIA SẺ THÔNG TIN</h3>
         <h2>Bài viết mới</h2>
         <p>Hãy cùng chúng tôi chia sẻ những bài viết mới với các thông tin về những sản phẩm du lịch</p>
       </div>
-      <div className="posts-container">
+      <div className="postHomePage-container">
         {posts.map((post) => (
-          <div key={post.id} className="post-card">
-            <img src={post.image} alt={post.title} className="post-image" />
-            <div className="post-content">
+          <div key={post.id} className="postHomePage-card">
+            <img src={post.image} alt={post.title} className="postHomePage-image " />
+            <div className="postHomePage-content">
               <p className="admin">{post.admin} <span className="dot"></span></p>
-              <h4 className="post-title">{post.title}</h4>
-              <p className="post-description">{post.description}</p>
+              <h4 className="postHomePage-title">{post.title}</h4>
+              <p className="postHomePage-description">{post.description}</p>
               <div className="tags">
                 {post.tags.map((tag, index) => (
                   <span key={index} className="tag">{tag}</span>
                 ))}
               </div>
-              <div className="post-meta">
+              <div className="postHomePage-meta">
                 <span>{post.views}</span>
                 <span>{post.date}</span>
               </div>

@@ -44,9 +44,7 @@ const Banner: React.FC = () => {
         />
       ) : (
         <p>Loading video...</p>
-      )}
-
-      
+      )}   
     </div>
   );
 };

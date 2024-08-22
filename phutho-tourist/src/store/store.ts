@@ -4,6 +4,7 @@ import aboutUsReducer from "../features/aboutus/aboutUsSlice";
 import introduceReducer from "../features/aboutus/introduceSlice";
 import postsReducer from "../features/homeposts/postsSlice";
 import servicesHomeReducer from "../features/servicesHome/servicesHomeSlice";
+import postsPageReducer from "../features/postspage/postsPageSlice";
 import { thunk } from "redux-thunk";
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     introduce: introduceReducer,
     post: postsReducer,
     serviceHome: servicesHomeReducer,
+    postsPage: postsPageReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

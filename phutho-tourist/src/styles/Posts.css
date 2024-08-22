@@ -2,13 +2,55 @@
   font-family: Arial, sans-serif;
   background-color: #f0f0f0;
   padding: 20px;
+  z-index: 3;
+}
+.post-container {
+  position: relative;
+  z-index: 3; /* Đặt z-index cao hơn video */
+  margin-top: -500px;
+  background-color: transparent; /* Để nền trong suốt nếu cần */
 }
 
 .content-wrapper-post {
   display: flex;
+  margin: 10px 150px 10px 150px;
   justify-content: space-between;
+  position: relative;
+  z-index: 4;
 }
 .content-wrapper {
+  position: relative;
   display: flex;
+  object-fit: cover;
   justify-content: space-between;
+  padding: 0px 150px 0 150px;
+  z-index: 4;
+}
+.title-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 90px;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 48px;
+  z-index: 5; /* Đặt z-index cao hơn để nổi lên trên các phần tử khác */
+  box-shadow: 5px 5px 16px 0px rgba(255, 255, 255, 0.25);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  /* Tạo hình lục giác */
+  position: relative;
+  background: rgba(255, 255, 255, 0.7); /* Nền màu trắng với độ trong suốt */
+  border: 2px solid #2867b1; /* Màu viền xanh dương tương tự */
+  clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+}
+
+.title-page h5 {
+  margin: 0; /* Xóa khoảng cách mặc định của tiêu đề */
+  font-family: Philosopher;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 80px; /* 200% */
+  text-transform: uppercase;
+  color: var(--blue-primary-500, #0054a6); /* Màu chữ tương tự */
 }

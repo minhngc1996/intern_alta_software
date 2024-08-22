@@ -1,63 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Sidebar.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../store/store';
+import { fetchPostsPage } from '../../features/postspage/postsPageSlice';
 const Sidebar = () => {
-    const posts = [
-        {
-          title: "Thông báo đấu giá giữ xe tại CVVH Đầm Sen",
-          views: "10k views",
-          date: "20/02/2022",
-          image: "path_to_image1"
-        },
-        {
-            title: "Thông báo đấu giá giữ xe tại CVVH Đầm Sen",
-            views: "10k views",
-            date: "20/02/2022",
-            image: "path_to_image1"
-          },
-          {
-            title: "Thông báo đấu giá giữ xe tại CVVH Đầm Sen",
-            views: "10k views",
-            date: "20/02/2022",
-            image: "path_to_image1"
-          },{
-            title: "Thông báo đấu giá giữ xe tại CVVH Đầm Sen",
-            views: "10k views",
-            date: "20/02/2022",
-            image: "path_to_image1"
-          },{
-            title: "Thông báo đấu giá giữ xe tại CVVH Đầm Sen",
-            views: "10k views",
-            date: "20/02/2022",
-            image: "path_to_image1"
-          },
-          {
-            title: "Thông báo đấu giá giữ xe tại CVVH Đầm Sen",
-            views: "10k views",
-            date: "20/02/2022",
-            image: "path_to_image1"
-          },{
-            title: "Thông báo đấu giá giữ xe tại CVVH Đầm Sen",
-            views: "10k views",
-            date: "20/02/2022",
-            image: "path_to_image1"
-          },
-          {
-            title: "Thông báo đấu giá giữ xe tại CVVH Đầm Sen",
-            views: "10k views",
-            date: "20/02/2022",
-            image: "path_to_image1"
-          },
-      ];
-    
+      const dispatch = useDispatch<AppDispatch>();
+      const {postsPage, loading, error} = useSelector((state:RootState) => state.postsPage);
+      useEffect(() => {
+        dispatch(fetchPostsPage())
+      },[dispatch]);
+
+      if(loading) return <p>Loading...</p>
+      if(error) return <p>Error: {error}</p>
+      if(postsPage.length ===0) return <p>No posts available</p>
+
+
       return (
-        <aside className="sidebar">
+        <aside className="sidebar-page">
           <h2>Bài mới nhất</h2>
-          {posts.map((post, index) => (
-            <div key={index} className="post-item">
-              <img src={post.image} alt={post.title} className="post-image" />
-              <div className="post-info">
-                <h3 className="post-title">{post.title}</h3>
-                <div className="post-meta">
+          {postsPage.map((post, index) => (
+            <div key={index} className="postsPage-item">
+              <img src={post.image} alt={post.title} className="postsPage-image" />
+              <div className="postsPage-info">
+                <p className="postsPage-title">{post.title}</p>
+                <div className="postsPage-meta">
                   <span>{post.views}</span>
                   <span>{post.date}</span>
                 </div>
