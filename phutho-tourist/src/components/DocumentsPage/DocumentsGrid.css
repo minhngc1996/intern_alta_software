@@ -1,25 +1,92 @@
 .documents-container {
-  max-width: calc(100% - 800px); /* Lề 500px mỗi bên */
-  margin: 0 auto; /* Căn giữa container */
-  padding: 16px 0; /* Khoảng cách trên và dưới của container */
+  max-width: calc(100% - 800px);
+  margin: 0 auto;
+  padding: 16px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 22.111px; /* Khoảng cách giữa các card */
+  gap: 22.111px;
   text-align: center;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  margin: 0 0 100px 0;
+}
+.document-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+  height: 170px;
+}
+.document-img {
+  max-width: 60%;
+  max-height: 60%;
+  margin: auto;
+  object-fit: contain;
+}
+.title-container {
+  position: relative;
+  text-align: center;
+  margin: -50px 20px 40px 20px;
+}
+.title-container h5 {
+  margin: 0;
+  font-family: Philosopher;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 80px; /* 200% */
+  text-transform: uppercase;
+  color: var(--blue-primary-500, #0054a6);
+}
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 90px;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 48px;
+  z-index: 5;
+  box-shadow: 5px 5px 16px 0px rgba(255, 255, 255, 0.25);
+  position: relative;
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid #2867b1;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
 }
 
-.title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 24px;
-  color: #1d3f99;
-  width: 100%;
+.title-container::before,
+.title-container::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+}
+
+.title-container::before {
+  bottom: 100%;
+  border-bottom: 20px solid rgba(255, 255, 255, 0.7);
+  left: 0;
+}
+
+.title-container::after {
+  top: 100%;
+  border-top: 20px solid rgba(255, 255, 255, 0.7);
+  left: 0;
+}
+
+.documents-grid-container {
+  margin: 0 auto;
 }
 
 .document-card {
   width: 180px;
-  height: 300px;
+  height: 270px;
   border-radius: 10px;
   overflow: hidden;
 }
@@ -35,13 +102,15 @@
   font-size: 14px;
   font-weight: bold;
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px;
   border-radius: 0 0 10px 10px;
   text-align: center;
-  white-space: normal; /* Allow text to wrap to the next line */
-  word-wrap: break-word; /* Break long words to prevent overflow */
-  line-height: 1.2; /* Adjust line height for better readability */
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.2;
+  position: absolute;
+  top: 150px;
+  left: 25px;
+  right: 25px;
 }
 
 .card-meta {

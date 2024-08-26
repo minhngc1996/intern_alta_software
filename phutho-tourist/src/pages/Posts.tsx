@@ -5,6 +5,7 @@ import '../styles/Posts.css'
 import PostList from '../components/PostsPage/PostList'
 import SidebarPost from '../components/PostsPage/SidebarPost'
 import Banner from '../components/Banner'
+import SearchBar from '../components/PostsPage/SearchBar'
 const Posts = () => {
   return (
     <>
@@ -18,7 +19,10 @@ const Posts = () => {
         </div>
         <div className='content-wrapper-post'>
           <SidebarPost />
+          <div>
+          <SearchBar />
           <PostList />
+          </div>
         </div>
       </div>
     </>

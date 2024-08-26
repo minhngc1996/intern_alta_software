@@ -1,43 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Table, Input, Button, DatePicker, Space } from 'antd';
 import { SearchOutlined, DownloadOutlined } from '@ant-design/icons';
 import type { ColumnsType } from 'antd/es/table';
 import './DocumentsTable.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../../store/store';
+import { fetchDocumentsTable } from '../../features/documentsPage/documentsTable/documentsTableSlice';
 
 interface DocumentData {
-  key: string;
-  stt: number;
+  id: string; 
   name: string;
   date: string;
-  download: JSX.Element;
+  url: string;
 }
 
 const { RangePicker } = DatePicker;
 
-const data: DocumentData[] = [
-  {
-    key: '1',
-    stt: 1,
-    name: 'Khám phá Hội An - Việt Nam',
-    date: '03/03/12 22:43',
-    download: <DownloadOutlined />,
-  },
-  {
-    key: '2',
-    stt: 2,
-    name: 'Hải Phòng yêu cầu người dân không ra khỏi nhà sau 22h',
-    date: '03/03/12 22:43',
-    download: <DownloadOutlined />,
-  },
-  // Add more rows as needed
-];
-
 const columns: ColumnsType<DocumentData> = [
   {
     title: 'STT',
-    dataIndex: 'stt',
     key: 'stt',
     width: '5%',
+    render: (_: any, __: any, index: number) => index + 1, 
   },
   {
     title: 'Tên tài liệu',
@@ -53,23 +37,39 @@ const columns: ColumnsType<DocumentData> = [
   },
   {
     title: 'Tải tài liệu',
-    dataIndex: 'download',
+    dataIndex: 'url',
     key: 'download',
     width: '15%',
-    render: (text) => <Button icon={text} />,
+    render: (url: string) => (
+      <a href={url} download>
+        <Button icon={<DownloadOutlined />} />
+      </a>
+    ),
   },
 ];
 
-const DocumentsTable: React.FC = () => (
-  <div className="documents-table-container">
-    <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
-      <Space direction="horizontal" size="middle" style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <RangePicker />
-        <Input placeholder="Tìm kiếm" prefix={<SearchOutlined />} />
+const DocumentsTable = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { documentsTable, loading, error } = useSelector((state: RootState) => state.documentsTable);
+
+  useEffect(() => {
+    dispatch(fetchDocumentsTable());
+  }, [dispatch]);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
+  return (
+    <div className="documents-table-container">
+      <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
+        <Space direction="horizontal" size="middle" style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <RangePicker />
+          <Input placeholder="Tìm kiếm" prefix={<SearchOutlined />} />
+        </Space>
+        <Table columns={columns} dataSource={documentsTable} pagination={{ pageSize: 5 }} />
       </Space>
-      <Table columns={columns} dataSource={data} pagination={{ pageSize: 10 }} />
-    </Space>
-  </div>
-);
+    </div>
+  );
+};
 
 export default DocumentsTable;

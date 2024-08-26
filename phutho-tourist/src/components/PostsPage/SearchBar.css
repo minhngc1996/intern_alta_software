@@ -1,0 +1,42 @@
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 94%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin: 5px 20px 5px 20px;
+}
+
+.search-bar-input {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.search-bar-input .ant-input {
+  border-radius: 10px;
+  width: 314px;
+}
+
+.date-picker {
+  margin-right: 20px;
+  width: 332px;
+}
+
+.date-picker .ant-picker {
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.sort-select {
+  border-radius: 10px;
+  min-width: 120px;
+}
+
+.sort-select .ant-select-selector {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+}

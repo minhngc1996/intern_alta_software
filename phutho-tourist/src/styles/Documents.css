@@ -1,0 +1,5 @@
+.documents-page {
+  position: relative; /* Để chứa các phần tử con với position absolute */
+  width: 100%;
+  min-height: 100vh; /* Đảm bảo chiếm toàn bộ chiều cao */
+}

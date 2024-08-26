@@ -6,9 +6,10 @@
 }
 .post-container {
   position: relative;
-  z-index: 3; /* Đặt z-index cao hơn video */
-  margin-top: -500px;
-  background-color: transparent; /* Để nền trong suốt nếu cần */
+  z-index: 3;
+  margin-top: -750px;
+  background-color: transparent;
+  margin-bottom: 100px;
 }
 
 .content-wrapper-post {

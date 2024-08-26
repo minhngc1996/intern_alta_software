@@ -1,10 +1,10 @@
 import React from 'react'
 import DocumentsGrid from '../components/DocumentsPage/DocumentsGrid'
 import DocumentsTable from '../components/DocumentsPage/DocumentsTable'
-
+import '../styles/Documents.css'
 const Documents = () => {
   return (
-    <div>
+    <div >
       <DocumentsGrid />
       <DocumentsTable /> 
     </div>

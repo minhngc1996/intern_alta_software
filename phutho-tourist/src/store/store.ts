@@ -5,6 +5,8 @@ import introduceReducer from "../features/aboutus/introduceSlice";
 import postsReducer from "../features/homeposts/postsSlice";
 import servicesHomeReducer from "../features/servicesHome/servicesHomeSlice";
 import postsPageReducer from "../features/postspage/postsPageSlice";
+import documentsGridReducer from "../features/documentsPage/documentsGrid/documentsGridSlice";
+import documentsTableReducer from "../features/documentsPage/documentsTable/documentsTableSlice";
 import { thunk } from "redux-thunk";
 export const store = configureStore({
   reducer: {
@@ -14,6 +16,8 @@ export const store = configureStore({
     post: postsReducer,
     serviceHome: servicesHomeReducer,
     postsPage: postsPageReducer,
+    documentsGrid: documentsGridReducer,
+    documentsTable: documentsTableReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
