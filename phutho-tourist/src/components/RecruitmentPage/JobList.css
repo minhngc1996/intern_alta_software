@@ -1,66 +1,116 @@
 .recruitment-page {
-  padding: 20px;
-  background-color: #f0f2f5;
+  padding: 40px 20px;
+  min-height: 100vh;
+  position: absolute;
+  top: 100px;
+  z-index: 4;
+  overflow: hidden;
 }
 
 .recruitment-header {
   text-align: center;
-  margin-bottom: 20px;
-  background-size: cover;
-  padding: 50px;
+  margin-bottom: 30px;
+}
+
+.recruitment-header h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
 }
 
 .search-filter {
-  background: #fff;
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.search-filter input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
+.search-filter .ant-input {
   border-radius: 4px;
-  border: 1px solid #d9d9d9;
+}
+
+.search-filter .ant-btn {
+  border-radius: 4px;
+}
+
+.filter-section {
+  margin-top: 20px;
 }
 
 .filter-section h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
   margin-bottom: 10px;
 }
 
-.filter-section ul {
-  list-style: none;
+.filter-section .ant-checkbox-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-section .ant-checkbox-wrapper {
+  margin-bottom: 8px;
+}
+
+.job-card {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin: 0;
   padding: 0;
+  border: none;
 }
 
-.filter-section ul li {
-  padding: 5px 0;
-  cursor: pointer;
-  transition: all 0.3s;
+.job-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
 }
 
-.filter-section ul li:hover {
-  color: #1890ff;
+.job-card .ant-card-meta-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.job-card .ant-card-meta-description p {
+  margin-bottom: 5px;
+  color: #555;
 }
 
 .card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .card-footer a {
   color: #1890ff;
+  font-weight: 500;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .card-footer a:hover {
-  text-decoration: underline;
+  color: #40a9ff;
 }
 
-.ant-pagination {
-  margin-top: 20px;
-  text-align: center;
+.ant-pagination .ant-pagination-item-active {
+  border-color: #1890ff;
+}
+
+.ant-pagination .ant-pagination-item-active a {
+  color: #1890ff;
+}
+
+@media (max-width: 576px) {
+  .search-filter {
+    padding: 15px;
+  }
+
+  .job-card {
+    margin-bottom: 20px;
+  }
 }

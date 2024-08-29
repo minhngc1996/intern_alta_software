@@ -3,6 +3,7 @@
   color: white;
   padding: 28px 10%;
   font-size: smaller;
+  position: absolute;
 }
 
 .footer-container {

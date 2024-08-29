@@ -7,6 +7,7 @@ import servicesHomeReducer from "../features/servicesHome/servicesHomeSlice";
 import postsPageReducer from "../features/postspage/postsPageSlice";
 import documentsGridReducer from "../features/documentsPage/documentsGrid/documentsGridSlice";
 import documentsTableReducer from "../features/documentsPage/documentsTable/documentsTableSlice";
+import recruimentReducer from "../features/recruitment/recruimentSlice";
 import { thunk } from "redux-thunk";
 export const store = configureStore({
   reducer: {
@@ -18,6 +19,7 @@ export const store = configureStore({
     postsPage: postsPageReducer,
     documentsGrid: documentsGridReducer,
     documentsTable: documentsTableReducer,
+    recruiment: recruimentReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
