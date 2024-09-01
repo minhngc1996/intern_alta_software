@@ -3,7 +3,8 @@
   color: white;
   padding: 28px 10%;
   font-size: smaller;
-  position: absolute;
+  position: relative;
+  margin-top: auto; /* Đẩy footer xuống dưới cùng */
 }
 
 .footer-container {
