@@ -16,48 +16,57 @@
 
 .slider-content {
   position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
-  color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  margin: 0 auto;
-  max-width: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 20px 30px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .slider-title {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: bold;
-  margin: 0 0 10px;
+  margin: 0;
   line-height: 1.2;
+  color: #0054a6;
+}
+
+.slider-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.control-button {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 10px;
+}
+.control-button img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.control-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .slider-description {
   font-size: 18px;
   line-height: 1.5;
-  margin: 0;
-}
-
-.slider-controls {
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-}
-
-.control-button {
-  background-color: rgba(0, 0, 0, 0.7);
-  color: #ffffff;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.control-button:hover {
-  background-color: rgba(0, 0, 0, 0.9);
+  margin: 10px 0;
 }
 
 .slider-pagination {
@@ -79,7 +88,12 @@
 }
 
 .pagination-dot.active {
-  background-color: #ffffff;
+  width: 16px; /* Điều chỉnh kích thước icon */
+  height: 16px;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/phutho-tourist-e9654.appspot.com/o/icon_slider%2Ficon_slider.jpg?alt=media&token=ad702c49-e585-4d61-82a3-e3f738052df4");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .pagination-dot:hover {

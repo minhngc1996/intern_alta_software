@@ -45,3 +45,38 @@ body {
   width: 80%;
   padding: 0 100px 0 100px;
 }
+
+.post-related h2 {
+  color: var(--blue-primary-500, #0054a6);
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.post_content-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.post_content-grid .post-card {
+  flex: 1 1 calc(25% - auto);
+  margin: 5px; /* Khoảng cách giữa các bài viết */
+  max-width: calc(25% - 10px);
+}
+
+@media (max-width: 768px) {
+  .post_content-grid .post-card {
+    flex: 1 1 calc(50% - 16px); /* Trên màn hình nhỏ hơn, mỗi bài viết chiếm 50% chiều rộng */
+    max-width: calc(50% - 16px);
+  }
+}
+
+@media (max-width: 480px) {
+  .post_content-grid .post-card {
+    flex: 1 1 100%; /* Trên màn hình rất nhỏ, mỗi bài viết chiếm 100% chiều rộng */
+    max-width: 100%;
+  }
+}

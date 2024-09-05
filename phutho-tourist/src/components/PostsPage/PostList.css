@@ -1,28 +1,28 @@
 .postContent-list {
   flex: 1;
-  margin: 0 20px 20px 20px; /* Thêm khoảng cách xung quanh danh sách bài viết */
+  margin: 0 20px 20px 20px;
 }
 
 .postContent-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 5px;
-  margin-bottom: 20px; /* Thêm khoảng cách giữa lưới bài viết và phân trang */
+  margin-bottom: 20px;
 }
 
 .postContent-grid .post-item {
   background: white;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Thêm đổ bóng để tạo chiều sâu */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s ease-in-out;
-  aspect-ratio: 1/1; /* Tạo tỷ lệ 1:1 để thẻ bài viết có hình vuông */
+  aspect-ratio: 1/1;
   display: flex;
   flex-direction: column;
 }
 
 .postContent-grid .post-item:hover {
-  transform: translateY(-5px); /* Hiệu ứng nhấc lên khi hover */
+  transform: translateY(-5px);
 }
 
 .postContent-grid img {
@@ -66,19 +66,29 @@
   align-items: center;
   color: white;
 }
-
-.paginationPostList .ant-pagination-item {
-  margin: 0 5px;
-  border-color: #1890ff;
-}
-
-.paginationPostList .ant-pagination-item a {
-  color: #1890ff; /* Chữ trắng */
-}
+/* Tùy chỉnh pagination */
 .paginationPostList .ant-pagination-item-active {
-  background-color: #1890ff;
-  border-color: #1890ff;
+  background-color: #0054a6;
+  border-color: #0054a6;
 }
+
 .paginationPostList .ant-pagination-item-active a {
-  color: white; /* Chữ trắng */
+  color: #ffffff !important;
+}
+
+.paginationPostList .ant-pagination-item:hover {
+  border-color: #0054a6;
+}
+
+.paginationPostList .ant-pagination-item:hover a {
+  color: white;
+}
+
+.post-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card-link:hover {
+  opacity: 0.9;
 }
