@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Card, Col, Row, Tag, Input, Button, Pagination } from 'antd';
+import { Card, Col, Row, Input, Button, Pagination } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import './JobList.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import { fetchRecruiment } from '../../features/recruitment/recruimentSlice';
-
-const { Meta } = Card;
-
-
+import JobCard from './JobCard';
 
 const fieldOptions = ['Hướng dẫn viên', 'Kinh doanh', 'Marketing', 'IT', 'Nhân Sự', 'Design'];
 const locationOptions = ['Hà Nội', 'TP. Hồ Chí Minh', 'Đà Nẵng', 'Cần Thơ'];
@@ -16,16 +13,14 @@ const jobTypeOptions = ['Toàn Thời Gian', 'Bán Thời Gian', 'Thực Tập S
 
 const JobList: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const {recruiment, loading, error} = useSelector((state:RootState) => state.recruiment);
+  const { recruiment, loading, error } = useSelector((state: RootState) => state.recruiment);
   const [searchText, setSearchText] = useState('');
   const [selectedFields, setSelectedFields] = useState<string[]>([]);
   const [selectedLocations, setSelectedLocations] = useState<string[]>([]);
   const [selectedJobTypes, setSelectedJobTypes] = useState<string[]>([]);
   const [filteredJobs, setFilteredJobs] = useState(recruiment);
   const [currentPage, setCurrentPage] = useState(1);
-  const pageSize = 9; 
-
-
+  const pageSize = 9;
 
   useEffect(() => {
     dispatch(fetchRecruiment());
@@ -80,14 +75,7 @@ const JobList: React.FC = () => {
         key={option}
         type={selectedList.includes(option) ? 'primary' : 'default'}
         onClick={() => toggleSelection(selectedList, setSelectedList, option)}
-        style={{
-          marginBottom: '8px',
-          borderRadius:'20px',
-          marginRight: '8px',
-          backgroundColor: selectedList.includes(option) ? '#0054A6' : '#f0f0f0',
-          color: selectedList.includes(option) ? '#fff' : '#595959',
-          borderColor: selectedList.includes(option) ? '#0054A6' : '#d9d9d9',
-        }}
+        className={`filter-group-button ${selectedList.includes(option) ? 'active' : ''}`}
       >
         {option}
       </Button>
@@ -111,7 +99,7 @@ const JobList: React.FC = () => {
       </div>
       <Row gutter={[16, 24]}>
         <Col xs={24} sm={24} md={8} lg={6} style={{ position: 'relative', flexShrink: 0 }}>
-          <div className="search-filter">
+          <div className="filter-container">
             <Input
               placeholder="Tìm kiếm công việc..."
               prefix={<SearchOutlined />}
@@ -120,17 +108,17 @@ const JobList: React.FC = () => {
               size="large"
             />
 
-            <div className="filter-section">
+            <div className="filter-group-container">
               <h3>Lĩnh vực</h3>
               {renderButtonGroup(fieldOptions, selectedFields, setSelectedFields)}
             </div>
 
-            <div className="filter-section">
+            <div className="filter-group-container">
               <h3>Địa điểm</h3>
               {renderButtonGroup(locationOptions, selectedLocations, setSelectedLocations)}
             </div>
 
-            <div className="filter-section">
+            <div className="filter-group-container">
               <h3>Hình thức làm việc</h3>
               {renderButtonGroup(jobTypeOptions, selectedJobTypes, setSelectedJobTypes)}
             </div>
@@ -141,22 +129,9 @@ const JobList: React.FC = () => {
           <Row gutter={[16, 24]}>
             {paginatedJobs.map((job) => (
               <Col xs={24} sm={12} md={8} lg={8} key={job.id}>
-                <Card hoverable className="job-card">
-                  <Meta
-                    title={job.title}
-                    description={
-                      <>
-                        <p><strong>Hình thức:</strong> {job.type}</p>
-                        <p><strong>Địa điểm:</strong> {job.location}</p>
-                        <p>{job.description}</p>
-                      </>
-                    }
-                  />
-                  <div className="card-footer">
-                    <Tag color={job.status === 'Đang tuyển' ? 'green' : 'red'}>{job.status}</Tag>
-                    <a href="#">Xem chi tiết</a>
-                  </div>
-                </Card>
+                <div className="job-card-container"> 
+                  <JobCard job={job} />
+                </div>
               </Col>
             ))}
           </Row>

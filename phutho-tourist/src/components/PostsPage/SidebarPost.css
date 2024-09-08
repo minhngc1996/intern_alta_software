@@ -1,7 +1,55 @@
-.sidebar {
-  width: 20%;
-  background-color: #fff;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
+
+.sidebar-post {
+  width: 30%;
+  background: rgba(255, 255, 255, 0.7);
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.5px);
   border-radius: 10px;
+}
+
+.sidebar-post__title {
+  text-align: center;
+  font-family: "Philosopher", "Times New Roman", Times, serif, "Arial Narrow",
+    Arial, sans-serif;
+  color: var(--blue-primary-500, #0054a6);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.sidebar-post__menu .ant-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Căn trái icon và text */
+  font-size: 16px;
+  padding: 10px 15px;
+  color: #0054a6;
+}
+
+.sidebar-post__menu .ant-menu-item-selected {
+  background: var(--blue-primary-500, #0054a6);
+  color: white;
+  border-radius: 8px;
+}
+
+.sidebar-post__menu .ant-menu-item:hover {
+  border-radius: 8px;
+  background: var(--blue-primary-500, #0054a6);
+  color: white;
+}
+
+.sidebar-post__icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  vertical-align: middle;
+  color: var(--blue-primary-500, #0054a6);
+}
+.sidebar-post__menu .ant-menu-item-selected .sidebar-post__icon {
+  filter: brightness(0) invert(1); /* Chuyển thành màu trắng */
 }

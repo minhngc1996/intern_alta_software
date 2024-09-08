@@ -1,18 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
 .sidebar-page {
   width: 400px;
   padding: 10px;
-  background-color: #f4f4f4;
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-height: 540px; /* Chiều cao tối đa của sidebar */
-  overflow-y: auto; /* Bật cuộn khi nội dung vượt quá chiều cao */
+  max-height: 540px;
+  overflow-y: auto;
   margin-left: 10px;
   cursor: pointer;
 }
 
-h2 {
-  font-size: 20px;
-  margin-bottom: 20px;
+.sidebar-page h2 {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: left;
+  margin: 24px 0px 24px 24px;
+  color: var(--blue-primary-500, #0054a6);
 }
 
 .postsPage-item {
@@ -41,15 +49,23 @@ h2 {
 }
 
 .postsPage-title {
-  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
   margin: 0;
-  font-weight: bold;
+  color: var(--gray-gray-500, #666);
 }
 
 .postsPage-meta {
+  font-family: "Roboto", sans-serif;
+  color: var(--gray-gray-400, #858585);
   font-size: 12px;
-  color: #888;
-  margin-top: 5px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }

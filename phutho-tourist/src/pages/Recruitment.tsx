@@ -4,7 +4,7 @@ import JobList from '../components/RecruitmentPage/JobList'
 
 const Recruitment = () => {
   return (
-    <div style={{marginBottom: '200px'}}>
+    <div style={{marginBottom: '350px'}}>
       <JobList />
     </div>
   )

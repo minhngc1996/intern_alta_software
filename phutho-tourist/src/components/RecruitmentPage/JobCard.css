@@ -1,0 +1,55 @@
+/* JobCard.css */
+
+/* Container cho Card */
+.job-card {
+  margin-bottom: 20px; /* Khoảng cách giữa các Card */
+}
+
+/* Header của Card (bao gồm logo và title) */
+.job-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Khoảng cách giữa logo và title */
+}
+
+/* Logo của Card */
+.job-card-logo {
+  width: 40px; /* Kích thước của logo */
+  height: 40px;
+  object-fit: cover; /* Giữ tỷ lệ của logo */
+}
+
+/* Footer của Card */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-footer a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: var(--blue-primary-500, #0054a6);
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.card-footer a:hover {
+  background-color: #0570dc;
+  color: #ffffff;
+}
+
+/* Tag status nằm bên phải của mô tả */
+.job-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.job-card-meta .status-tag {
+  margin-left: auto; /* Đẩy Tag status về phía bên phải */
+}

@@ -14,21 +14,21 @@ interface PostCardProps {
 const PostCard: React.FC<PostCardProps> = ({ title, image, author, views, date, categories }) => {
   return (
     <Card hoverable className="postPageCard-card">
-      <img src={image} alt={title} className="post-image" />
+      <img src={image} alt={title} className="postPageCard-image" />
       <div className="postPageCard-content">
         <h3 className="postPageCard-title">{title}</h3>
         <p className="postPageCard-author">
           {author}
           <span className="status-indicator"></span> 
         </p>
-        <div className="postPageCard-meta">
-          <span>{views} lượt xem</span>
-          <span>{date}</span>
-        </div>
         <div className="postPageCard-categories">
           {categories.map((category, index) => (
             <Tag key={index} color="blue">{category}</Tag>
           ))}
+        </div>
+        <div className="postPageCard-meta">
+          <span>{views} lượt xem</span>
+          <span>{date}</span>
         </div>
       </div>
     </Card>

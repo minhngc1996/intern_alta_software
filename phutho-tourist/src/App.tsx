@@ -9,6 +9,7 @@ import Recruitment from './pages/Recruitment';
 import Footer from './components/Footer';
 import Introduce from './components/ContentHomePage/AboutUs/Introduce';
 import PostsDetail from './components/PostsPage/PostsDetail/PostsDetail';
+import JobDetail from './components/RecruitmentPage/JobDetail';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/post/:id" element={<PostsDetail />} />
           <Route path="/documents" element={<Documents />} />
           <Route path="/recruitment" element={<Recruitment />} />
+          <Route path="/recruitment/:id" element={<JobDetail />} />
           <Route path="/gioi-thieu" element={<Introduce />} />
           {/* <Route path="*" element={<p>Page not found</p>} /> */}
         </Routes>

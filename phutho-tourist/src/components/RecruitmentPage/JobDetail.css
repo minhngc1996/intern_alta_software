@@ -1,0 +1,115 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.job-detail-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  z-index: 10;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  flex-grow: 1;
+  min-height: calc(100vh - 200px);
+}
+
+.ant-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.card-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 687px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card-image {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  width: 1000px;
+  height: 687px;
+}
+
+.ant-card-body {
+  padding: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1e90ff;
+  text-align: center;
+}
+
+.ant-descriptions-item-label {
+  font-weight: bold;
+}
+
+.ant-descriptions-item-content {
+  font-size: 16px;
+}
+
+.ant-form-item-label > label {
+  font-weight: bold;
+  color: #1e90ff;
+}
+
+.ant-form-item {
+  margin-bottom: 20px;
+}
+
+.ant-input,
+.ant-input-group-addon {
+  height: 45px;
+  font-size: 16px;
+}
+
+.ant-radio-group {
+  font-size: 16px;
+}
+
+.ant-btn-primary {
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  background-color: #1e90ff;
+  border: none;
+  border-radius: 5px;
+}
+
+.ant-btn-primary:hover {
+  background-color: #005cbf;
+}
+
+.ant-upload.ant-upload-select {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .ant-form-item {
+    width: 100%;
+  }
+}

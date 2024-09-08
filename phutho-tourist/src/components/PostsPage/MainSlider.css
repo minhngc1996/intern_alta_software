@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
 .main-slider {
   position: relative;
   width: 1134px;
@@ -32,8 +34,13 @@
 }
 
 .slider-title {
-  font-size: 28px;
-  font-weight: bold;
+  font-family: "Philosopher", "Times New Roman", Times, serif, "Arial Narrow",
+    Arial, sans-serif;
+  font-size: 38px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-align: start;
   margin: 0;
   line-height: 1.2;
   color: #0054a6;
@@ -64,9 +71,15 @@
 }
 
 .slider-description {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
   font-size: 18px;
   line-height: 1.5;
   margin: 10px 0;
+  color: var(--gray-gray-600, #4d4d4d);
+  text-overflow: ellipsis;
 }
 
 .slider-pagination {

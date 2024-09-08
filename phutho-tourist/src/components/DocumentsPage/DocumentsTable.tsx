@@ -6,6 +6,7 @@ import './DocumentsTable.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import { fetchDocumentsTable } from '../../features/documentsPage/documentsTable/documentsTableSlice';
+import searchBarIcon from '../../assets/searchbar/searchbar.png';
 
 interface DocumentData {
   id: string; 
@@ -63,8 +64,11 @@ const DocumentsTable = () => {
     <div className="documents-table-container">
       <Space direction="vertical" size="middle" style={{ display: 'flex' }}>
         <Space direction="horizontal" size="middle" style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <RangePicker />
-          <Input placeholder="Tìm kiếm" prefix={<SearchOutlined />} />
+          <RangePicker suffixIcon={<img src={searchBarIcon} alt="calendar-icon" className="calendar-icon" />} />
+          <Input 
+            placeholder="Tìm kiếm" 
+            prefix={<SearchOutlined />} 
+          />
         </Space>
         <Table columns={columns} dataSource={documentsTable} pagination={{ pageSize: 5 }} />
       </Space>

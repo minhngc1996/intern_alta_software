@@ -2,7 +2,8 @@ import React from 'react';
 import { Input, DatePicker, Select } from 'antd';
 import { CalendarOutlined } from '@ant-design/icons';
 import './SearchBar.css';
-
+import { SearchOutlined } from '@ant-design/icons';
+import searchBarIcon from '../../assets/searchbar/searchbar.png'
 const { Search } = Input;
 const { RangePicker } = DatePicker;
 const { Option } = Select;
@@ -14,10 +15,11 @@ const SearchBar = () => {
         placeholder="Tìm kiếm"
         size="large"
         className="search-bar-input"
+        prefix={<SearchOutlined />}
       />
       <RangePicker
         size="large"
-        suffixIcon={<CalendarOutlined />}
+        suffixIcon={<img src={searchBarIcon} alt="calendar-icon" className="calendar-icon" />}
         className="date-picker"
       />
       <Select

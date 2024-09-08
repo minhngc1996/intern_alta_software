@@ -5,7 +5,7 @@ import './PostList.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../../store/store';
 import { fetchPostsPage } from '../../features/postspage/postsPageSlice';
-import { Link } from 'react-router-dom'; // Import Link từ react-router-dom
+import { Link } from 'react-router-dom';
 
 interface PostListProps {
   maxPosts?: number;
@@ -32,17 +32,17 @@ const PostList: React.FC<PostListProps> = ({ maxPosts }) => {
   const paginatedPosts = postsPage.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   return (
-    <div className="postContent-list">
-      <div className="postContent-grid">
+    <div className="post-list-container">
+      <div className="post-grid">
         {paginatedPosts.map((post, index) => (
           <Link key={index} to={`/post/${post.id}`} className="post-card-link"> 
             <PostCard
               title={post.title}
               image={post.image}
               author={post.admin}
+              categories={post.tags}
               views={post.views}
               date={post.date}
-              categories={post.tags}
             />
           </Link>
         ))}
@@ -53,7 +53,7 @@ const PostList: React.FC<PostListProps> = ({ maxPosts }) => {
           pageSize={pageSize}
           total={postsPage.length}
           onChange={handlePageChange}
-          className="paginationPostList"
+          className="pagination-custom"
         />
       )}
     </div>

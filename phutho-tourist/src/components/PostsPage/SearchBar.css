@@ -18,6 +18,7 @@
 .search-bar-input .ant-input {
   border-radius: 10px;
   width: 314px;
+  padding-left: 40px; /* Để tạo khoảng cách cho icon kính lúp */
 }
 
 .date-picker {

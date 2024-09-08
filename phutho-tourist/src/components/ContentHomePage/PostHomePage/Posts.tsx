@@ -22,6 +22,7 @@ const Posts = () => {
       <div className="postHomePage-header">
         <h3>CHIA SẺ THÔNG TIN</h3>
         <h2>Bài viết mới</h2>
+        <hr style={{width:'130px', height:'6px', borderRadius:'100px', background: 'var(--blue-primary-600, #003F7D)'}}/>
         <p>Hãy cùng chúng tôi chia sẻ những bài viết mới với các thông tin về những sản phẩm du lịch</p>
       </div>
       <div className="postHomePage-container">

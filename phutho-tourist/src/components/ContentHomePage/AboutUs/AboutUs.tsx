@@ -8,7 +8,7 @@ const AboutUs = () => {
   const dispatch = useAppDispatch();
   const images = useAppSelector((state) => state.aboutUs.images);
   const status = useAppSelector((state) => state.aboutUs.status);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (status === 'idle') {
@@ -17,15 +17,16 @@ const AboutUs = () => {
   }, [status, dispatch]);
 
   const handleButtonClick = () => {
-    navigate('/gioi-thieu'); // Navigate to /gioi-thieu when button is clicked
+    navigate('/gioi-thieu'); 
   };
 
   return (
     <section className="about-us">
-      <div className="content-container">
-        <div className="text-content">
+      <div className="content-container-home">
+        <div className="text-content-home">
           <h3>VỀ CHÚNG TÔI</h3>
           <h2>Chúng tôi cung cấp dịch vụ du lịch đáp ứng mọi nhu cầu của bạn!</h2>
+          <hr style={{width:'154px', height:'6px', borderRadius:'100px', background: 'var(--blue-primary-600, #003F7D)', textAlign:'start'}}/>
           <div className='post-about'>
             <p>
               Công ty Cổ phần Dịch vụ Du lịch Phú Thọ (Phuthotourist), là một đơn vị thành viên của Saigontourist...

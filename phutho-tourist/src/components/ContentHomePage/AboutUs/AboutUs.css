@@ -1,9 +1,11 @@
-body {
-  font-family: Arial, sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap");
+/* body {
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   background-color: white;
-}
+} */
 
 .about-us {
   position: relative;
@@ -12,34 +14,44 @@ body {
   margin: 20px 200px;
 }
 .post-about {
+  font-family: "Roboto", sans-serif;
   position: relative;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   border-left: 4px solid #007bff;
   padding-left: 20px;
   margin-left: 10px;
 }
-.content-container {
+.content-container-home {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   max-width: 100%;
   margin: 0;
 }
+.content-container-home h2 {
+  font-family: "Philosopher", "Times New Roman", Times, serif, "Arial Narrow",
+    Arial, sans-serif;
+  font-size: 44px;
+  text-align: start;
+  font-style: normal;
+  width: 90%;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--blue-primary-600, #003f7d);
+}
 
-.text-content {
+.text-content-home {
   flex: 1;
   margin-right: 20px;
 }
 
-.text-content h3 {
+.text-content-home h3 {
   color: #555;
   font-weight: normal;
   margin-bottom: 10px;
-}
-
-.text-content h2 {
-  color: #003366;
-  font-size: 28px;
-  margin-bottom: 20px;
 }
 
 .text-content p {
@@ -71,7 +83,7 @@ body {
 }
 .image-content {
   position: relative;
-  width: 300px; /* Kích thước của hình ảnh 1 */
+  width: 300px;
   height: auto;
 }
 
